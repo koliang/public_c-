@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template <typename T1, typename T2=int, int i = 100>
+template <typename T1, typename T2=int, int i = 100>      //添加默认参数类型和默认参数
 class A
 {
 public:
@@ -16,7 +16,7 @@ private:
 	int j;
 };
 
-template <typename T1, typename T2, int i>
+template <typename T1, typename T2, int i>      //类模板方法写法
 A<T1,T2, i>::A(T1 x, T2 y):a(x), b(y), j(i)
 {
 }
@@ -35,12 +35,12 @@ T1 A<T1, T2, i>::Sum()
 
 int main()
 {
-	A<double, int> cl(1, 2);
+	A<double, int> cl(1, 2);        //类模板实例化，默认参数类型可加可不加，默认参数不加
 	int c = cl.Sum();
 
 	cout << "c: " << c << endl;
 	
-	A<int>* c2 = new A<int>(2, 3);
+	A<int>* c2 = new A<int>(2, 3);    //类模板实例化，默认参数类型可加可不加，默认参数不加
 	int d = c2->Sum();
 	cout << "d: " << d << endl;
 	delete c2;
